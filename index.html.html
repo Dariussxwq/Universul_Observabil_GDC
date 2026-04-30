@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universul: O Călătorie în Infinit</title>
+    <style>
+        :root {
+            --primary: #63b3ed;
+            --accent: #f687b3;
+            --bg-dark: #05070a;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 50% 50%, #1a202c 0%, #05070a 100%);
+            color: #f7fafc;
+            margin: 0;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Fundal cu stele animate prin CSS */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--bg-dark)),
+                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Milky_Way_Galaxy.jpg/1920px-Milky_Way_Galaxy.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 0 0 20px var(--primary);
+            animation: fadeIn 2s ease-in;
+            letter-spacing: 2px;
+        }
+
+        header p { font-size: 1.5rem; color: #a0aec0; }
+
+        nav {
+            background: rgba(10, 15, 25, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover { color: var(--primary); transform: translateY(-2px); }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 50px 20px; }
+
+        /* Carduri Interactive */
+        .section-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 60px;
+            transition: transform 0.4s ease, border-color 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-card:hover {
+            transform: scale(1.02);
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        h2 { color: var(--primary); font-size: 2.2rem; margin-top: 0; border-bottom: 2px solid rgba(99, 179, 237, 0.3); padding-bottom: 10px; }
+        h3 { color: #fff; font-size: 1.3rem; margin-bottom: 5px; }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 850px) {
+            .content-grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 2.5rem; }
+        }
+
+        .img-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: 0.5s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .img-container img:hover { transform: scale(1.03); }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary);
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .stats-box {
+            background: rgba(0,0,0,0.4);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            margin-top: 20px;
+        }
+
+        .stats-box p { margin: 10px 0; }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            background: #000;
+            color: #4a5568;
+            border-top: 1px solid #1a202c;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <p style="letter-spacing: 4px; text-transform: uppercase;">Proiect Atestat Informatică</p>
+        <h1>MISTERUL COSMOSULUI</h1>
+        <p>O incursiune științifică în structura, evoluția și destinul Universului</p>
+        <a href="#definitie" style="margin-top:40px; color:white; text-decoration:none; border:2px solid var(--primary); padding:12px 30px; border-radius:50px; font-weight:bold; transition:0.3s; background: rgba(99, 179, 237, 0.1);">Începe Călătoria</a>
+    </header>
+
+    <nav>
+        <a href="#definitie">Universul</a>
+        <a href="#compozitie">Compoziție</a>
+        <a href="#structura">Structură</a>
+        <a href="#radiatie">CMB</a>
+        <a href="#destin">Destin</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- 1. Universul Observabil -->
+        <section id="definitie" class="section-card">
+            <span class="badge">CAPITOLUL I</span>
+            <div class="content-grid">
+                <div>
+                    <h2>Dimensiunea și Expansiunea</h2>
+                    <p>Universul observabil reprezintă sfera teoretică din jurul Pământului din care lumina a avut suficient timp să ajungă la noi de la momentul Big Bang-ului, acum aproximativ 13,8 miliarde de ani.</p>
+                    <p><strong>Paradoxul dimensiunii:</strong> Deși Universul are o vârstă de 13,8 miliarde de ani, diametrul său actual observabil este mult mai mare, estimat la <strong>93 de miliarde de ani-lumină</strong>. Cum este posibil acest lucru? Explicația constă în expansiunea metrică a spațiului însuși. În timp ce fotonii de lumină călătoreau spre noi, spațiul pe care îl traversau se extindea, îndepărtând galaxiile sursă la distanțe colosale.</p>
+                    <div class="stats-box" style="border-left-color: var(--primary);">
+                        <p><em>Informație cheie:</em> Limita exterioară a ceea ce putem vedea teoretic se numește <strong>orizont de particule</strong>. Ce se află dincolo de acest orizont? Fizicienii presupun că Universul continuă, posibil fiind infinit, dar lumina din acele regiuni pur și simplu nu a avut timp să ne atingă.</p>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Observable_Universe_with_Measurements_01.png/960px-Observable_Universe_with_Measurements_01.png">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Compoziția -->
+        <section id="compozitie" class="section-card">
+            <span class="badge">CAPITOLUL II</span>
+            <h2>Modelul Cosmologic Standard (ΛCDM)</h2>
+            <div class="content-grid">
+                <div class="img-container">
+                    <img src="https://www.scientia.ro/images/A4_2019/compozitia-universului.jpg">
+                </div>
+                <div>
+                    <p>Cea mai mare surpriză a astrofizicii moderne a fost descoperirea că tot ceea ce vedem – stele, planete, nebuloase și noi înșine – reprezintă doar o fracțiune minusculă din cosmos. Modelul Lambda-CDM arată că Universul este dominat de entități invizibile.</p>
+                    <div class="stats-box">
+                        <p>🔵 <strong>Energie întunecată (~68%):</strong> O forță misterioasă, teoretizată ca fiind "energia vidului", care acționează ca o anti-gravitație la scară cosmică, forțând expansiunea Universului să accelereze.</p>
+                        <p>🟣 <strong>Materie întunecată (~27%):</strong> Nu emite, nu absoarbe și nu reflectă lumina. Știm că există doar prin influența ei gravitațională. Fără ea, galaxiile s-ar roti atât de repede încât s-ar dezintegra.</p>
+                        <p>⚪ <strong>Materie barionică (~5%):</strong> Materia convențională, formată din protoni, neutroni și electroni, din care este alcătuit tabelul periodic al elementelor.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Structura pe Scară Largă -->
+        <section id="structura" class="section-card">
+            <span class="badge">CAPITOLUL III</span>
+            <div class="content-grid">
+                <div>
+                    <h2>Arhitectura Cosmică</h2>
+                    <p>Dacă am putea privi Universul de la o distanță de miliarde de ani-lumină, nu am vedea o distribuție uniformă a galaxiilor, ci o structură asemănătoare cu rețeaua neuronală a unui creier sau o pânză de păianjen tridimensională. Aceasta este <strong>Rețeaua Cosmică</strong>.</p>
+                    <ul>
+                        <li><strong>Filamentele:</strong> Râuri imense de gaze și galaxii, întinse pe sute de milioane de ani-lumină, ținute laolaltă de materia întunecată.</li>
+                        <li><strong>Vidurile (Voids):</strong> Goluri sferice masive între filamente, regiuni pustii cu foarte puține galaxii (ex. Vidul Boötes, cu un diametru de 330 milioane ani-lumină).</li>
+                        <li><strong>Nodurile:</strong> Punctele unde filamentele se intersectează, formând super-roiuri masive de galaxii.</li>
+                    </ul>
+                    <p>Galaxia noastră aparține Grupului Local, care la rândul său este atras inexorabil către centrul <strong>Super-roiului Laniakea</strong> (care înseamnă "Ceruri Nemăsurate" în hawaiană), o structură colosală ce conține peste 100.000 de galaxii.</p>
+                </div>
+                <div class="img-container">
+                    <img src="https://scinews.ro/wp-content/uploads/2014/09/Laniakea-si-Calea-Lactee.jpg">
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. CMB -->
+        <section id="radiatie" class="section-card">
+            <span class="badge">CAPITOLUL IV</span>
+            <div class="content-grid">
+                <div class="img-container">
+                    <img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2013/03/planck_cmb/12583930-4-eng-GB/Planck_CMB_pillars.jpg">
+                </div>
+                <div>
+                    <h2>Radiația Cosmică de Fond (CMB)</h2>
+                    <p>Radiația Cosmică de Microunde de Fond (CMB) este cea mai importantă dovadă a teoriei Big Bang. Descoperită accidental în 1964 de radioastronomii Arno Penzias și Robert Wilson, aceasta reprezintă "prima lumină" a Universului.</p>
+                    <p><strong>Epoca Recombinării:</strong> Timp de 380.000 de ani după Big Bang, Universul a fost o "supă" opacă, extrem de fierbinte, de plasmă de protoni și electroni, prin care lumina nu putea circula. Pe măsură ce s-a extins și s-a răcit la aproximativ 3.000 Kelvin, electronii au putut orbita protonii pentru a forma primii atomi de hidrogen. În acel moment precis, lumina a fost eliberată, făcând Universul transparent.</p>
+                    <p>Acea lumină antică s-a răcit odată cu expansiunea spațiului și ajunge la noi astăzi sub formă de microunde slabe, având o temperatură rece de aproximativ <strong>2.7 Kelvin (-270.4 °C)</strong>, vizibilă din absolut orice direcție am privi pe cer.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Destin -->
+        <section id="destin" class="section-card">
+            <span class="badge">CAPITOLUL V</span>
+            <h2 style="text-align:center;">Sfârșitul Timpului: Viitorul Universului</h2>
+            <p style="text-align:center; max-width: 800px; margin: 0 auto 30px auto; color: #cbd5e0;">În astrofizică, soarta finală a Cosmosului depinde de o singură bătălie epică: forța gravitațională a materiei, care tinde să strângă totul la un loc, versus forța repulsivă a energiei întunecate, care împinge totul spre exterior. Datele actuale indică trei mari posibilități teoretice:</p>
+            
+            <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;">
+                
+                <div style="flex:1; min-width:250px; padding:25px; background:rgba(0,0,0,0.4); border-radius:15px; border-top: 3px solid #63b3ed;">
+                    <h3>❄️ Big Freeze (Marea Înghețare)</h3>
+                    <p><strong>Scenariul cel mai probabil:</strong> Energia întunecată câștigă. Universul continuă să se extindă la infinit. Treptat, galaxiile se izolează unele de altele. Stelele își consumă combustibilul și se sting pe rând, lăsând în urmă doar pitice negre, stele neutronice și găuri negre. În final, prin procesul de radiație Hawking, chiar și găurile negre se vor evapora, lăsând un Univers rece, întunecat și mort termodinamic, în care nicio altă reacție nu va mai fi posibilă.</p>
+                </div>
+
+                <div style="flex:1; min-width:250px; padding:25px; background:rgba(0,0,0,0.4); border-radius:15px; border-top: 3px solid #f687b3;">
+                    <h3>💥 Big Rip (Marea Ruptură)</h3>
+                    <p><strong>Scenariul violent:</strong> Dacă densitatea energiei întunecate ("energia fantomă") crește odată cu timpul, expansiunea se va accelera exponențial. Viteza va deveni atât de mare încât va învinge absolut toate celelalte forțe fundamentale. Mai întâi galaxiile vor fi smulse unele de altele, apoi forța de atracție a stelelor asupra planetelor va ceda. În ultimele fracțiuni de secundă, însăși structura atomilor va fi sfâșiată, distrugând materia subatomică și chiar țesătura spațiu-timpului.</p>
+                </div>
+
+                <div style="flex:1; min-width:250px; padding:25px; background:rgba(0,0,0,0.4); border-radius:15px; border-top: 3px solid #fbd38d;">
+                    <h3>🌀 Big Crunch (Marea Contracție)</h3>
+                    <p><strong>Scenariul ciclic:</strong> Gravitația câștigă. Dacă se descoperă că materia din Univers este suficientă pentru a opri în cele din urmă expansiunea, procesul va fi inversat. Universul va începe să se contracte, încălzindu-se dramatic. Galaxiile, stelele și planetele se vor prăbuși unele în altele, sfârșind într-o singularitate fierbinte și infinit de densă – exact starea de dinaintea Big Bang-ului. Unii teoreticieni sugerează că din acest colaps ar putea rezulta un nou Big Bang ("Big Bounce").</p>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p style="font-size: 1.1rem; color: #a0aec0;">Proiect de specialitate realizat pe baza datelor confirmate de NASA, ESA (Agenția Spațială Europeană) și laboratoarele CERN.</p>
+        <p>&copy; 2026 Atestat Informatică - Explorarea Spațiului și Astrofizică. Toate drepturile rezervate.</p>
+    </footer>
+
+</body>
+</html>
